@@ -1,0 +1,67 @@
+TITLE
+IDENTIFYING A SUDOKU SOLUTION
+INTRODUCTION
+A Sudoku puzzle is a 9x9 grid in which some---usually around 28 or 30---of the cells are filled with integers in the range of 1 to 9; the other cells are empty. A region of the puzzle is one of the nine 3x3 non-overlapping squares of cells within the grid. No integer is duplicated within any row, column, or region, and the puzzle's goal is to fill the remaining cells with integers from 1 to 9 so that this non-duplication property is maintained. typical Sudoku puzzle and its solution:
+
+7	9	4	6	2	1	3	5	8
+5	8	3	4	9	7	2	6	1
+2	6	1	3	8	5	4	7	9
+4	1	9	7	5	6	8	2	3
+6	7	2	8	3	9	1	4	5
+3	5	8	2	1	4	7	9	6
+8	3	6	5	7	2	9	1	4
+9	2	5	1	4	3	6	8	7
+1	4	7	9	6	8	5	3	2
+DESCRIPTION
+In this project, you are to design, implement, document, and test a C++ program that reads a 9x9 matrix of integers from a data file and reports whether or not the matrix satisfies the requirements of Sudoku; that is, whether or not any value is duplicated in any row, column, or region in the matrix. Note that the program will NOT solve a Sudoku puzzle, only test whether a matrix satisfies the puzzle's requirements.
+INPUT
+The program will read the name of a data file from the terminal and the elements of a 9x9 matrix from the named file. A data file might look like this:
+      7 9 4 6 2 1 3 5 8
+      5 8 3 4 9 7 2 6 1
+      2 6 1 3 8 5 4 7 9
+      4 1 9 7 5 6 8 2 3
+      6 7 2 8 3 9 1 4 5
+      3 5 8 2 1 4 7 9 6
+      8 3 6 5 7 2 9 1 4
+      9 2 5 1 4 3 6 8 7
+      1 4 7 9 6 8 5 3 2
+    
+OUTPUT
+The program will prompt for the name of the input file and write to the terminal the matrix being tested and whether or not it is a Sudoku solution; that is, whether or not there are any dpulicated values in any of the matrix's rows, columns, or regions. The program will write all output to the terminal.
+ERRORS
+The program may assume the input is as described; it need not detect any errors.
+EXAMPLE
+Two runs of the program might look like this:
+      csh> sudoku
+      Enter input file name: m1.dat
+      The matrix
+        7 9 4 6 2 1 3 5 8
+        5 8 3 4 9 7 2 6 1
+        2 6 1 3 8 5 4 7 9
+        4 1 9 7 5 6 8 2 3
+        6 7 2 8 3 9 1 4 5
+        3 5 8 2 1 4 7 9 6
+        8 3 6 5 7 2 9 1 4
+        9 2 5 1 4 3 6 8 7
+        1 4 7 9 6 8 5 3 2
+      is a Sudoku solution.
+
+      csh> sudoku
+      Enter input file name: m2.dat
+      The matrix
+        1 9 4 6 2 1 3 5 8
+        5 8 3 4 9 7 2 6 1
+        2 6 1 3 8 5 4 7 9
+        4 1 9 7 5 6 8 2 3
+        6 7 2 8 3 9 1 4 5
+        3 5 8 2 1 4 7 9 6
+        8 3 6 5 7 2 9 1 4
+        9 2 5 1 4 3 6 8 7
+        1 4 7 9 6 8 5 3 2
+      is NOT a Sudoku solution.
+    
+OTHER REQUIREMENTS
+Represent the candidate matrix in a two-dimensional array. Use functions to (1) open the input file; (2) read the matrix in; (3) test if the rows, columns, and regions of the matrix contain duplicate values; and (4) write out a matrix.
+HINTS The functions that test the rows, columns, and regions will all return boolean values. In each, a one-dimensional frequency matrix will likely be useful. To the function that tests if a region contains duplicates, pass the coordinates of the region's upper left corner.
+HAND IN
+See About Programming Assignments for a description of what to hand in: design document, user document, code, tests, and summary.
